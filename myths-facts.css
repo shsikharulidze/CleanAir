@@ -1,0 +1,345 @@
+/* Myths and Facts Page Specific Styles */
+
+/* Page Header */
+.page-header {
+  padding: 4rem 0;
+  background: linear-gradient(to bottom, var(--ivory), var(--sage-tint));
+  text-align: center;
+}
+
+.page-header-content {
+  max-width: 48rem;
+  margin: 0 auto;
+}
+
+.page-title {
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--deep-plum);
+  margin-bottom: 1.5rem;
+}
+
+.page-subtitle {
+  font-size: 1.25rem;
+  color: var(--charcoal);
+  margin-bottom: 1rem;
+  line-height: 1.5;
+}
+
+.page-instruction {
+  font-size: 1.125rem;
+  color: rgba(31, 35, 40, 0.8);
+}
+
+/* Myths Section */
+.myths-section {
+  padding: 4rem 0;
+  background: var(--ivory);
+}
+
+.myths-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Flip Cards */
+.flip-card {
+  perspective: 1000px;
+  width: 100%;
+  height: 300px;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: transform 0.2s ease;
+}
+
+.flip-card:hover {
+  transform: scale(1.02);
+}
+
+.flip-card:focus {
+  outline: 2px solid var(--deep-plum);
+  outline-offset: 4px;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.7s;
+  transform-style: preserve-3d;
+}
+
+.flip-card.flipped .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 8px;
+  padding: 2rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 2px 8px rgba(74, 42, 59, 0.1);
+  border: 1px solid rgba(74, 42, 59, 0.2);
+}
+
+.flip-card-front {
+  background: var(--soft-gray);
+  color: var(--charcoal);
+}
+
+.flip-card-back {
+  background: var(--sage-tint);
+  color: var(--charcoal);
+  transform: rotateY(180deg);
+}
+
+.card-label {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--deep-plum);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 1.5rem;
+}
+
+.card-text {
+  font-size: 1.125rem;
+  font-weight: 500;
+  line-height: 1.4;
+  margin-bottom: 1.5rem;
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
+
+.card-instruction {
+  font-size: 0.75rem;
+  color: rgba(31, 35, 40, 0.6);
+  margin-top: auto;
+}
+
+/* Important Message Section */
+.important-message {
+  padding: 3rem 0;
+  background: var(--sage-tint);
+}
+
+.important-message-content {
+  text-align: center;
+  max-width: 48rem;
+  margin: 0 auto;
+}
+
+.important-message-title {
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: var(--deep-plum);
+  margin-bottom: 1rem;
+}
+
+.important-message-text {
+  font-size: 1.125rem;
+  color: var(--charcoal);
+  line-height: 1.5;
+  margin-bottom: 1rem;
+}
+
+.important-message-source {
+  font-size: 0.875rem;
+  color: rgba(31, 35, 40, 0.7);
+}
+
+/* Page Navigation */
+.page-navigation {
+  padding: 3rem 0;
+  background: var(--ivory);
+}
+
+.page-nav-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* Additional page styles for other pages */
+.facts-detail-section {
+  padding: 4rem 0;
+  background: var(--ivory);
+}
+
+.fact-card-large {
+  text-align: center;
+  padding: 2.5rem 2rem;
+  background: var(--sage-tint);
+  border-radius: 8px;
+  border: 1px solid rgba(74, 42, 59, 0.2);
+}
+
+.fact-number-large {
+  font-size: 4rem;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  color: var(--deep-plum);
+  margin-bottom: 1rem;
+}
+
+.fact-title-large {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--charcoal);
+  margin-bottom: 1rem;
+}
+
+.fact-description-large {
+  color: var(--charcoal);
+  line-height: 1.5;
+  margin-bottom: 1rem;
+}
+
+.fact-source {
+  font-size: 0.875rem;
+  color: rgba(31, 35, 40, 0.7);
+  margin: 0;
+}
+
+/* Risks Section */
+.risks-section {
+  padding: 4rem 0;
+  background: var(--ivory);
+}
+
+.risks-container {
+  background: var(--ivory);
+  border-radius: 8px;
+  padding: 2rem;
+  border: 1px solid var(--soft-gray);
+}
+
+.risks-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.risk-category-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--deep-plum);
+  margin-bottom: 1.5rem;
+}
+
+.risk-list {
+  space-y: 1rem;
+}
+
+.risk-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.risk-bullet {
+  width: 8px;
+  height: 8px;
+  background: var(--deep-plum);
+  border-radius: 50%;
+  flex-shrink: 0;
+  margin-top: 0.5rem;
+}
+
+.risk-item p {
+  color: var(--charcoal);
+  margin: 0;
+}
+
+/* Responsive Design for Flip Cards */
+@media (max-width: 768px) {
+  .page-title {
+    font-size: 2.5rem;
+  }
+  
+  .page-subtitle {
+    font-size: 1.125rem;
+  }
+  
+  .myths-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .flip-card {
+    height: 280px;
+  }
+  
+  .flip-card-front,
+  .flip-card-back {
+    padding: 1.5rem 1rem;
+  }
+  
+  .card-text {
+    font-size: 1rem;
+  }
+  
+  .page-nav-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .page-nav-buttons .btn {
+    width: 100%;
+    max-width: 300px;
+  }
+  
+  .risks-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .facts-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .page-header {
+    padding: 3rem 0;
+  }
+  
+  .page-title {
+    font-size: 2rem;
+  }
+  
+  .flip-card {
+    height: 260px;
+  }
+  
+  .flip-card-front,
+  .flip-card-back {
+    padding: 1.25rem 0.75rem;
+  }
+  
+  .card-text {
+    font-size: 0.9rem;
+  }
+  
+  .fact-number-large {
+    font-size: 3rem;
+  }
+  
+  .risks-container {
+    padding: 1.5rem;
+  }
+}

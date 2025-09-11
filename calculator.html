@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cost Calculator | Clean Air Indoors</title>
+    <meta name="description" content="Calculate how much you spend on smoking and what you could save by quitting">
+    <meta name="author" content="Shota Sikharulidze, Residential Life Community at Fordham University">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="enhanced-styles.css">
+    <link rel="stylesheet" href="myths-facts.css">
+</head>
+<body>
+    <!-- Skip Link -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    
+    <!-- Navigation -->
+    <nav class="nav" role="navigation" aria-label="Main navigation">
+        <div class="container">
+            <div class="nav-content">
+                <div class="nav-brand">
+                    <a href="index.html" class="brand-link">
+                        <h1 class="brand-title">Clean Air Indoors</h1>
+                    </a>
+                </div>
+                
+                <!-- Desktop Navigation -->
+                <div class="nav-links desktop-nav">
+                    <a href="index.html" class="nav-link">Home</a>
+                    <a href="why-it-matters.html" class="nav-link">Why it matters</a>
+                    <a href="myths-and-facts.html" class="nav-link">Myths & facts</a>
+                    <a href="health-harms.html" class="nav-link">Health harms</a>
+                    <a href="quit-help.html" class="nav-link">Quit help</a>
+                    <a href="policy.html" class="nav-link">Policy</a>
+                    <a href="calculator.html" class="nav-link active">Calculator</a>
+                    <a href="resources.html" class="nav-link">Resources</a>
+                    <a href="faq.html" class="nav-link">FAQ</a>
+                    <a href="pledge.html" class="nav-link">Pledge</a>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <button class="mobile-menu-btn" id="mobileMenuBtn" aria-controls="mobile-menu" aria-expanded="false">
+                    <span class="sr-only">Open main menu</span>
+                    <span class="hamburger"></span>
+                </button>
+            </div>
+            
+            <!-- Mobile Menu -->
+            <div class="mobile-menu" id="mobile-menu">
+                <a href="index.html" class="mobile-nav-link">Home</a>
+                <a href="why-it-matters.html" class="mobile-nav-link">Why it matters</a>
+                <a href="myths-and-facts.html" class="mobile-nav-link">Myths & facts</a>
+                <a href="health-harms.html" class="mobile-nav-link">Health harms</a>
+                <a href="quit-help.html" class="mobile-nav-link">Quit help</a>
+                <a href="policy.html" class="mobile-nav-link">Policy</a>
+                <a href="calculator.html" class="mobile-nav-link active">Calculator</a>
+                <a href="resources.html" class="mobile-nav-link">Resources</a>
+                <a href="faq.html" class="mobile-nav-link">FAQ</a>
+                <a href="pledge.html" class="mobile-nav-link">Pledge</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main id="main-content" role="main">
+        
+        <!-- Page Header -->
+        <section class="page-header">
+            <div class="container">
+                <div class="page-header-content">
+                    <h1 class="page-title">Cost Calculator</h1>
+                    <p class="page-subtitle">
+                        See how much you spend on smoking and what you could save by quitting
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Calculator Form -->
+        <section class="calculator-section">
+            <div class="container">
+                <div class="calculator-form">
+                    <h2 class="form-title">Calculate Your Smoking Costs</h2>
+                    
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="price-per-pack">Price per pack ($)</label>
+                            <input type="number" id="price-per-pack" value="12" min="1" max="50" step="0.50" onchange="calculateCosts()">
+                            <small class="form-help">Average cigarette pack price</small>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="packs-per-week">Packs per week</label>
+                            <input type="number" id="packs-per-week" value="3" min="0.5" max="50" step="0.5" onchange="calculateCosts()">
+                            <small class="form-help">How many packs do you smoke weekly?</small>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="years-smoking">Years smoking</label>
+                            <input type="number" id="years-smoking" value="5" min="1" max="50" step="1" onchange="calculateCosts()">
+                            <small class="form-help">How long have you been smoking?</small>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Results -->
+                <div class="calculator-results" id="calculator-results">
+                    <h2 class="results-title">Your Smoking Costs</h2>
+                    
+                    <div class="results-grid">
+                        <div class="result-card highlight">
+                            <h3 class="result-label">Per Month</h3>
+                            <div class="result-amount" id="monthly-cost">$156</div>
+                        </div>
+                        
+                        <div class="result-card highlight">
+                            <h3 class="result-label">Per Year</h3>
+                            <div class="result-amount" id="yearly-cost">$1,872</div>
+                        </div>
+                        
+                        <div class="result-card total">
+                            <h3 class="result-label">Total Spent</h3>
+                            <div class="result-amount" id="total-cost">$9,360</div>
+                            <small class="result-note">Over <span id="years-display">5</span> years</small>
+                        </div>
+                    </div>
+                    
+                    <!-- What You Could Buy -->
+                    <div class="alternatives-section">
+                        <h3 class="alternatives-title">What Your Monthly Spending Could Buy Instead</h3>
+                        <div class="alternatives-grid" id="alternatives-grid">
+                            <!-- Generated by JavaScript -->
+                        </div>
+                    </div>
+                    
+                    <!-- Time Reclaimed -->
+                    <div class="time-section">
+                        <h3 class="time-title">Time Reclaimed</h3>
+                        <div class="time-stats">
+                            <div class="time-stat">
+                                <div class="time-number" id="time-per-day">45 min</div>
+                                <div class="time-label">Per day</div>
+                            </div>
+                            <div class="time-stat">
+                                <div class="time-number" id="time-per-month">22 hours</div>
+                                <div class="time-label">Per month</div>
+                            </div>
+                            <div class="time-stat">
+                                <div class="time-number" id="time-total">458 hours</div>
+                                <div class="time-label">Total reclaimed</div>
+                            </div>
+                        </div>
+                        <p class="time-note">Time spent smoking, including purchasing and smoke breaks</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Savings Projection -->
+        <section class="savings-section">
+            <div class="container">
+                <h2 class="section-title">Your Savings After Quitting</h2>
+                
+                <div class="savings-timeline">
+                    <div class="savings-milestone">
+                        <div class="milestone-time">1 Week</div>
+                        <div class="milestone-amount" id="savings-week">$36</div>
+                        <div class="milestone-benefit">Your sense of taste and smell improve</div>
+                    </div>
+                    
+                    <div class="savings-milestone">
+                        <div class="milestone-time">1 Month</div>
+                        <div class="milestone-amount" id="savings-month">$156</div>
+                        <div class="milestone-benefit">Breathing becomes easier, circulation improves</div>
+                    </div>
+                    
+                    <div class="savings-milestone">
+                        <div class="milestone-time">3 Months</div>
+                        <div class="milestone-amount" id="savings-3months">$468</div>
+                        <div class="milestone-benefit">Lung function increases up to 30%</div>
+                    </div>
+                    
+                    <div class="savings-milestone">
+                        <div class="milestone-time">1 Year</div>
+                        <div class="milestone-amount" id="savings-year">$1,872</div>
+                        <div class="milestone-benefit">Risk of heart disease drops by half</div>
+                    </div>
+                    
+                    <div class="savings-milestone">
+                        <div class="milestone-time">5 Years</div>
+                        <div class="milestone-amount" id="savings-5years">$9,360</div>
+                        <div class="milestone-benefit">Stroke risk same as non-smoker</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call to Action -->
+        <section class="key-message">
+            <div class="container">
+                <div class="key-message-content">
+                    <h2 class="key-message-title">Ready to Start Saving?</h2>
+                    <p class="key-message-text">
+                        The money you save is just one benefit of quitting. You'll also improve your health, 
+                        protect your family from secondhand smoke, and gain back precious time.
+                    </p>
+                    
+                    <div class="key-message-buttons">
+                        <a href="quit-help.html" class="btn btn-secondary">Get Help to Quit</a>
+                        <a href="health-harms.html" class="btn btn-secondary">See Health Benefits</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Additional Costs -->
+        <section class="hidden-costs-section">
+            <div class="container">
+                <h2 class="section-title">Hidden Costs of Smoking</h2>
+                
+                <div class="hidden-costs-grid">
+                    <div class="hidden-cost-card">
+                        <h3 class="hidden-cost-title">Healthcare Costs</h3>
+                        <ul class="hidden-cost-list">
+                            <li>Higher insurance premiums</li>
+                            <li>More frequent doctor visits</li>
+                            <li>Prescription medications</li>
+                            <li>Dental treatments</li>
+                        </ul>
+                        <p class="hidden-cost-note">Smokers spend $1,900+ more per year on healthcare</p>
+                    </div>
+                    
+                    <div class="hidden-cost-card">
+                        <h3 class="hidden-cost-title">Other Expenses</h3>
+                        <ul class="hidden-cost-list">
+                            <li>Dry cleaning and odor removal</li>
+                            <li>Home and car value reduction</li>
+                            <li>Fire and burn damage repairs</li>
+                            <li>Lost productivity and sick days</li>
+                        </ul>
+                        <p class="hidden-cost-note">These costs can add thousands more per year</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Navigation -->
+        <section class="page-navigation">
+            <div class="container">
+                <div class="page-nav-buttons">
+                    <a href="policy.html" class="btn btn-secondary">← Policy & Rules</a>
+                    <a href="resources.html" class="btn btn-primary">Resources →</a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer" role="contentinfo">
+        <div class="container">
+            <div class="footer-content">
+                <!-- Site Info -->
+                <div class="footer-section">
+                    <h3 class="footer-title">Clean Air Indoors</h3>
+                    <p class="footer-description">
+                        Supporting healthier indoor environments by reducing exposure to secondhand smoke and connecting people to quit resources.
+                    </p>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="footer-section">
+                    <h3 class="footer-title">Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="quit-help.html" class="footer-link">Get help to quit</a></li>
+                        <li><a href="why-it-matters.html" class="footer-link">Why it matters</a></li>
+                        <li><a href="health-harms.html" class="footer-link">Health impacts</a></li>
+                        <li><a href="resources.html" class="footer-link">Resources</a></li>
+                    </ul>
+                </div>
+
+                <!-- Emergency Quit Lines -->
+                <div class="footer-section">
+                    <h3 class="footer-title">Immediate Help</h3>
+                    <div class="footer-emergency">
+                        <div class="footer-emergency-item">
+                            <p class="footer-emergency-label">National Quitline</p>
+                            <a href="tel:1-800-784-8669" class="footer-emergency-phone">1-800-QUIT-NOW</a>
+                        </div>
+                        <div class="footer-emergency-item">
+                            <p class="footer-emergency-label">NY State Quitline</p>
+                            <a href="tel:1-866-697-8487" class="footer-emergency-phone">1-866-NY-QUITS</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p class="footer-disclaimer">Community prevention site. Not an official site.</p>
+                <p class="footer-copyright">© 2024 Clean Air Indoors. Educational purposes only.</p>
+                <p class="footer-attribution">Created by Shota Sikharulidze for Residential Life Community at Fordham University</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+    <script src="calculator.js"></script>
+</body>
+</html>
