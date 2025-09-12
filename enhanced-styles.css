@@ -95,6 +95,7 @@ body.loading-complete {
 
 /* FAQ Specific Styles */
 .faq-search-container {
+    margin-top: 30px;
     margin-bottom: 2rem;
 }
 
