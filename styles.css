@@ -593,57 +593,109 @@ a:hover {
   
   .mobile-menu-btn {
     display: block;
+    min-height: 44px; /* Better touch target */
+    min-width: 44px;
   }
   
   .mobile-menu.show {
     display: block;
   }
   
+  /* Enhanced mobile navigation */
+  .mobile-nav-link {
+    padding: 1rem 1.5rem; /* Larger touch targets */
+    font-size: 1.1rem;
+    border-bottom: 1px solid var(--soft-gray);
+  }
+  
+  .mobile-nav-link:last-child {
+    border-bottom: none;
+  }
+  
   .hero-title {
     font-size: 2.5rem;
+    line-height: 1.2;
   }
   
   .hero-subtitle {
     font-size: 1.125rem;
+    line-height: 1.5;
+    margin-bottom: 2rem;
   }
   
   .hero-buttons {
     flex-direction: column;
     align-items: center;
+    gap: 1rem;
   }
   
   .hero-buttons .btn {
     width: 100%;
     max-width: 300px;
+    min-height: 48px; /* Better touch target */
+    font-size: 1.1rem;
   }
   
   .facts-grid {
     grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .fact-card {
+    padding: 2rem 1.5rem;
   }
   
   .emergency-grid {
     grid-template-columns: 1fr;
+    gap: 1.5rem;
   }
   
   .key-message-buttons {
     flex-direction: column;
     align-items: center;
+    gap: 1rem;
   }
   
   .key-message-buttons .btn {
     width: 100%;
     max-width: 300px;
+    min-height: 48px;
+  }
+  
+  /* Page navigation buttons */
+  .page-nav-buttons {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .page-nav-buttons .btn {
+    width: 100%;
+    max-width: 280px;
+    margin: 0 auto;
   }
   
   .footer-bottom {
     flex-direction: column;
     text-align: center;
+    gap: 0.5rem;
+  }
+  
+  /* Better text readability */
+  body {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+  
+  /* Improved section spacing */
+  .facts-section,
+  .key-message {
+    padding: 3.5rem 0;
   }
 }
 
 @media (max-width: 480px) {
   :root {
-    --container-padding: 0.75rem;
+    --container-padding: 1rem;
   }
   
   .hero {
@@ -652,6 +704,12 @@ a:hover {
   
   .hero-title {
     font-size: 2rem;
+    line-height: 1.1;
+  }
+  
+  .hero-subtitle {
+    font-size: 1rem;
+    line-height: 1.5;
   }
   
   .facts-section,
@@ -660,10 +718,58 @@ a:hover {
   }
   
   .section-title {
-    font-size: 1.875rem;
+    font-size: 1.75rem;
+    line-height: 1.2;
   }
   
   .fact-number {
-    font-size: 2.5rem;
+    font-size: 2.25rem;
+  }
+  
+  .fact-title {
+    font-size: 1.1rem;
+  }
+  
+  .fact-description {
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+  
+  /* Enhanced mobile button spacing */
+  .btn {
+    padding: 0.875rem 1.5rem;
+    font-size: 1rem;
+    min-height: 48px;
+  }
+  
+  /* Mobile-optimized cards */
+  .fact-card {
+    padding: 1.5rem 1rem;
+    margin-bottom: 1rem;
+  }
+  
+  /* Better mobile navigation */
+  .nav {
+    padding: 0.75rem 0;
+  }
+  
+  .brand-title {
+    font-size: 1.25rem;
+  }
+  
+  .mobile-nav-link {
+    padding: 1.125rem 1rem;
+    font-size: 1rem;
+  }
+  
+  /* Improved emergency section for mobile */
+  .emergency-card {
+    padding: 1.5rem 1rem;
+    text-align: center;
+  }
+  
+  .emergency-phone {
+    font-size: 1.25rem;
+    padding: 0.75rem 1rem;
   }
 }

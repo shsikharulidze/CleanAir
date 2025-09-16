@@ -706,12 +706,19 @@ html {
 /* Responsive Design Enhancements */
 @media (max-width: 768px) {
     .faq-question {
-        padding: 1rem;
-        font-size: 1rem;
+        padding: 1.25rem 1rem;
+        font-size: 1.05rem;
+        min-height: 44px; /* Better touch target */
     }
     
     .faq-content {
-        padding: 0 1rem 1rem;
+        padding: 0 1rem 1.25rem;
+    }
+    
+    .faq-search-box input {
+        font-size: 1rem;
+        padding: 1rem 1.25rem;
+        min-height: 48px;
     }
     
     .harm-grid,
@@ -719,20 +726,40 @@ html {
     .support-grid,
     .research-categories {
         grid-template-columns: 1fr;
+        gap: 1.5rem;
     }
     
     .emergency-resources-grid {
         grid-template-columns: 1fr;
+        gap: 1.5rem;
     }
     
     .more-questions-buttons {
         flex-direction: column;
         align-items: center;
+        gap: 1rem;
     }
     
     .more-questions-buttons .btn {
         width: 100%;
         max-width: 300px;
+        min-height: 48px;
+    }
+    
+    /* Calculator mobile optimization */
+    .calculator-form .form-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .results-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .alternatives-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
     }
 }
 
